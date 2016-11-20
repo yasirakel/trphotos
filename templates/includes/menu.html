@@ -1,0 +1,100 @@
+{% load staticfiles %}
+    <!-- Navigation bar -->
+    <nav class="navbar">
+      <div class="container">
+
+        <!-- Logo and navigation links -->
+        <div class="pull-left">
+          <a class="navbar-toggle" href="#" data-toggle="offcanvas"><i class="ti-menu"></i></a>
+
+          <div class="logo">
+            <a href="index.html"><img src="{% static "img/logo.png" %}" alt="logo"></a>
+          </div>
+
+          <ul class="nav-menu">
+            <li>
+              <a class="active" href="index.html">Home</a>
+              <ul>
+                <li><a class="active" href="index.html">Version 1</a></li>
+                <li><a href="index2.html">Version 2</a></li>
+              </ul>
+            </li>
+            <li>
+              <a href="#">Explore</a>
+              <ul>
+                <li><a href="explore-style1.html">Style 1</a></li>
+                <li><a href="explore-style2.html">Style 2</a></li>
+                <li><a href="explore-style3-cols4.html">Style 3 - Cols 4</a></li>
+                <li><a href="explore-style3-cols3.html">Style 3 - Cols 3</a></li>
+                <li><a href="explore-style3-cols2.html">Style 3 - Cols 2</a></li>
+              </ul>
+            </li>
+            <li>
+              <a href="#">Pages</a>
+              <ul>
+                <li><a href="shot-add.html">Add Shot</a></li>
+                <li><a href="shot.html">Shot - Image</a></li>
+                <li><a href="shot-gallery.html">Shot - Gallery</a></li>
+                <li><a href="page-about.html">About</a></li>
+                <li><a href="page-contact.html">Contact</a></li>
+                <li><a href="page-faq.html">FAQ</a></li>
+                <li><a href="page-search.html">Search</a></li>
+                <li><a href="page-typography.html">Typography</a></li>
+              </ul>
+            </li>
+            <li>
+              <a href="#">User account</a>
+              <ul>
+                <li><a href="user-profile.html">Profile</a></li>
+                <li><a href="user-followers.html">Followers - 1</a></li>
+                <li><a href="user-followers-2.html">Followers - 2</a></li>
+                <li><a href="setting-profile.html">Settings</a></li>
+                <li><a href="user-login.html">Login</a></li>
+                <li><a href="user-register.html">Register</a></li>
+                <li><a href="user-forget-pass.html">Forget pass</a></li>
+              </ul>
+            </li>
+            <li>
+              <a href="#">More</a>
+              <ul>
+                <li><a href="http://themeforest.net/item/theshots-responsive-image-listing-template/14799485?ref=shamsoft"><strong>Buy now</strong></a></li>
+                <li><a href="doc/index.html">Documentation</a></li>
+                <li><a href="http://themeforest.net/item/theshots-responsive-image-listing-template/14799485/comments">Buy now</a></li>
+              </ul>
+            </li>
+          </ul>
+        </div>
+        <!-- END Logo and navigation links -->
+
+        <!-- User account and action buttons -->
+        <div class="pull-right">
+          <a class="btn-navbar search-opener" href="#"><i class="ti-search"></i></a>
+          <a class="btn-navbar" href="shot-add.html"><i class="ti-plus"></i></a>
+
+          <div class="dropdown user-account">
+            <a class="dropdown-toggle" href="#" data-toggle="dropdown">
+              <img src="{% static "img/avatar-1.jpg" %}" alt="avatar">
+            </a>
+
+            <ul class="dropdown-menu dropdown-menu-right">
+              <li><a href="user-profile.html">Profile</a></li>
+              <li><a href="setting-profile.html">Settings</a></li>
+              <li><a href="#">Logout</a></li>
+            </ul>
+          </div>
+
+        </div>
+        <!-- END User account and action buttons -->
+
+        <!-- Search screen -->
+        <div class="search-screen closed">
+          <button class="search-closer"><i class="ti-close"></i></button>
+          <form class="search-form" action="http://shamsoft.net/theshots/page-search.html">
+            <input type="text" autocomplete="off" placeholder="Type to search...">
+          </form>
+        </div>
+        <!-- END Search screen -->
+
+      </div>
+    </nav>
+    <!-- END Navigation bar -->

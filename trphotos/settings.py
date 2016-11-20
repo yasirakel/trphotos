@@ -49,6 +49,7 @@ INSTALLED_APPS = [
 
     #TR.photos
     'web',
+    'kullanici',
 ]
 
 MIDDLEWARE = [
@@ -130,6 +131,8 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/1.10/howto/static-files/
 
+STATIC_ROOT = os.path.join(BASE_DIR, 'static')
+
 STATIC_URL = '/static/'
 
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
@@ -139,3 +142,33 @@ MEDIA_URL = '/media/'
 # Ayarlar
 
 SITE_ID = 1
+
+# EMail Ayarları
+EMAIL_USE_TLS = True
+EMAIL_HOST = 'smtp.gmail.com'
+EMAIL_PORT = 587
+EMAIL_HOST_USER = 'yasirakel@gmail.com'
+EMAIL_HOST_PASSWORD = '|"NxSoft38'
+DEFAULT_FROM_EMAIL = 'info@tr.photos'
+DEFAULT_TO_EMAIL = 'info@tr.photos'
+
+#Kullanıcı Yönetimi
+
+ACCOUNT_ADAPTER = 'kullanici.adapter.KullaniciYonlendirme'
+ACCOUNT_AUTHENTICATED_LOGIN_REDIRECTS =True
+ACCOUNT_AUTHENTICATION_METHOD = 'username'
+ACCOUNT_CONFIRM_EMAIL_ON_GET = False
+ACCOUNT_EMAIL_CONFIRMATION_EXPIRE_DAYS = 3
+ACCOUNT_EMAIL_REQUIRED = True
+ACCOUNT_EMAIL_VERIFICATION = 'mandatory'
+ACCOUNT_EMAIL_SUBJECT_PREFIX = 'TR.photos'
+ACCOUNT_LOGIN_ATTEMPTS_LIMIT = 5
+ACCOUNT_LOGIN_ATTEMPTS_TIMEOUT = 300
+ACCOUNT_LOGIN_ON_EMAIL_CONFIRMATION = False
+ACCOUNT_LOGOUT_REDIRECT_URL = '/'
+ACCOUNT_PASSWORD_MIN_LENGTH = 6
+ACCOUNT_SESSION_REMEMBER = True
+ACCOUNT_USERNAME_MIN_LENGTH = 4
+
+
+

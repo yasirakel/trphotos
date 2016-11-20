@@ -1,0 +1,80 @@
+{% extends "base.html" %}
+{% load i18n %}
+{% load account %}
+
+{% block title %}{% trans "Sign In" %}dasd{% endblock %}
+{% block icerik %}
+    <main>
+      <section class="no-border-bottom section-sm">
+        <div class="container">
+          <div class="row">
+            <div class="col-xs-12 col-sm-6 col-sm-offset-3 col-lg-4 col-lg-offset-4">
+              <div class="card">
+                <div class="card-header">
+                  <h6>KULLANICI GİRİŞİ</h6>
+                </div>
+
+                <div class="card-block">
+                  <br>
+                  <form method="POST" action="{% url 'custom_login' %}">
+                      {% csrf_token %} {% if form.non_field_errors %}
+                    <div class="alert alert-warning">
+                      <ul class="alert-message">
+                        {% for error in form.non_field_errors %}
+                        <li>{{ error }}</li>
+                        {% endfor %}
+                      </ul>
+                    </div>
+                    {% endif %}
+                    <div class="form-group">
+                      <input class="form-control input-lg" id="id_login" name="login" type="text" placeholder="Kullanıcı Adı" required>
+                    </div>
+
+                    <div class="form-group">
+                      <input class="form-control input-lg"  id="id_password" name="password" type="password" placeholder="Parola" required>
+                    </div>
+                      <div class="checkbox">
+                      <label for="id_remember"><input id="id_remember" name="remember" type="checkbox" /> Beni Hatırla</label>
+                       </div>
+                      <input type="hidden" name="next" value="{{ next }}" />
+                    <button class="btn btn-primary btn-block" type="submit">{% trans "Sign In" %}</button>
+
+                  </form>
+                  <br>
+                </div>
+
+                <div class="card-footer">
+                  <div class="row text-center">
+                    <div class="col-xs-6">
+                      <a href="/kullanici/kayit/">Kaydol</a>
+                    </div>
+
+                    <div class="col-xs-6">
+                      <a href="/kullanici/parola/sıfırla/">Şifremi Unuttum?</a>
+                    </div>
+                  </div>
+                </div>
+
+              </div>
+
+              <div class="card">
+                <div class="card-block">
+                  <h6 class="text-uppercase no-margin-top"><small>Login with</small></h6>
+                  <div class="row">
+                    <div class="col-xs-6">
+                      <a class="btn btn-facebook btn-sm btn-block" href="#"><i class="fa fa-facebook"></i> Facebook</a>
+                    </div>
+
+                    <div class="col-xs-6">
+                      <a class="btn btn-twitter btn-sm btn-block" href="#"><i class="fa fa-twitter"></i> Twitter</a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+{% endblock %}
